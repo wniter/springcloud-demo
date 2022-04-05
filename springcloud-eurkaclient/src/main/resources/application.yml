@@ -1,0 +1,33 @@
+# 应用名称
+#spring.application.name=springcloud-eurkaclient
+
+
+#  @EnableEurekaServer//在Spring Boot启动类上加Eureka服务端注解
+#服务端注册
+#spring:
+#  application:
+#    name: springcloud-eurkaclient
+#eureka:
+#  client:
+#    # 防止Eureka启动时注册本身服务
+#    register-with-eureka: false
+#    fetch-registry: false
+
+################ 项目基本配置 ################
+server:
+  port: 8010
+  servlet:
+    # 项目访问路径前缀
+    context-path: /product
+spring:
+  application:
+    # 注册到Eureka的服务名
+    name: springcloud-eurkaclient
+
+################ Eureka配置 ################
+eureka:
+  client:
+    register-with-eureka: false # 是否注册自己的信息到EurekaServer，默认是true
+    fetch-registry: false # 是否拉取其它服务的信息，默认是true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
